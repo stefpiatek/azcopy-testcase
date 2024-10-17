@@ -12,6 +12,10 @@ services:
       - AZ_COPY_SOURCE=${AZ_COPY_SOURCE}
       - TENANT_ID=${TENANT_ID}
     volumes:
-      - ./data:/data
+      - ./data-export:/data
+      - data:/data
     entrypoint: [ "/app/copy.sh" ]
     privileged: true
+
+volumes:
+  data:
