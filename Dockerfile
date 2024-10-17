@@ -7,7 +7,7 @@ ENV https_proxy=$HTTP_PROXY
 
 # Install dependencies and azcopy
 RUN apt-get update && \
-    apt-get install -y wget keyutils && \
+    apt-get install -y wget keyutils zip && \
     wget -O azcopy.tar.gz https://aka.ms/downloadazcopy-v10-linux && \
     tar -xvf azcopy.tar.gz && \
     mv azcopy_linux_amd64_*/azcopy /usr/bin/ && \
