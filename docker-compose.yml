@@ -9,10 +9,11 @@ services:
     environment:
       - HTTP_PROXY=${HTTP_PROXY}
       - HTTPS_PROXY=${HTTP_PROXY}
-      - AZ_COPY_SOURCE=${AZ_COPY_SOURCE}
-      - TENANT_ID=${TENANT_ID}
+      - STORAGE_ACCOUNT=${STORAGE_ACCOUNT}
+      - SAS_CONTEXT=${SAS_CONTEXT}
+      - CONTAINERS=${CONTAINERS}
     volumes:
-      - ./data-export:/data
+      - ./export:/export
       - data:/data
     entrypoint: [ "/app/copy.sh" ]
     privileged: true
