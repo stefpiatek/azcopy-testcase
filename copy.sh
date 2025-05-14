@@ -11,7 +11,7 @@ for CONTAINER in "${CONTAINERS_ARRAY[@]}"; do
     if [ ! -f "/export/${CONTAINER}.zip" ]; then
         # Download to container within docker mount, as this has more storage
         mkdir -p "/data/${CONTAINER}"
-        azcopy copy "https://${STORAGE_ACCOUNT}.blob.core.windows.net/${CONTAINER}/?${SAS_CONTEXT}" "/data/${CONTAINER}" --recursive
+        azcopy copy "https://${STORAGE_ACCOUNT}.blob.core.windows.net/${CONTAINER}/?${SAS_CONTEXT}" "/data/${CONTAINER}" --recursive --include-after="${FROM_DATE}T00:00:00Z"
 
         # Zip to export mount
         zip -r "/export/${CONTAINER}.zip" "/data/${CONTAINER}"

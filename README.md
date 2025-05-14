@@ -14,6 +14,6 @@ Quick test case to check whether azcopy traffic is blocked in different environm
 Run this, logging in using the guest user that you created above
 
 ```shell
-docker compose --build up
+docker compose up --build
 ```
 and then there should be a sample file in the data directory

@@ -12,6 +12,7 @@ services:
       - STORAGE_ACCOUNT=${STORAGE_ACCOUNT}
       - SAS_CONTEXT=${SAS_CONTEXT}
       - CONTAINERS=${CONTAINERS}
+      - FROM_DATE=${FROM_DATE}
     volumes:
       - ./export:/export
       - data:/data
